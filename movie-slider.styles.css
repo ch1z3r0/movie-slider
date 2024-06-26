@@ -1,0 +1,110 @@
+body {
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 500px; /* Adjust as needed */
+	overflow: hidden;
+}
+.slide {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	background-color: rgba(255, 0, 0, 0.466);
+}
+.slide-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+}
+
+/* Watch Trailer Button Styles */
+.button {
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 2px;
+	font-size: 20px;
+	/* box-shadow: 0 0 20px 3px rgb(255, 255, 255); */
+	background-color: #fff;
+	color: #000000;
+}
+
+.btn:visited {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 15px 40px;
+	display: inline-block;
+	border-radius: 100px;
+	transition: all 0.2s;
+	position: absolute;
+}
+
+.btn:hover {
+	transform: translateY(-0.5px);
+	box-shadow: 0 0 20px 3px rgb(255, 255, 255);
+}
+
+.btn:active {
+	transform: translateY(-1px);
+	box-shadow: 0 0 20px 3px rgb(255, 255, 255);
+}
+
+/* .btn-white {
+	background-color: #fff;
+	color: #777;
+} */
+
+.btn::after {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+}
+
+.btn-white::after {
+	background-color: rgba(255, 255, 255, 0.384);
+}
+
+.btn:hover::after {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.btn-animated {
+	animation: moveInBottom 0.5s ease-out;
+	animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+/* Add more styles for buttons, text, and navigation */
