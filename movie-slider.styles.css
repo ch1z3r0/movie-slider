@@ -1,33 +1,68 @@
 body {
-	font-family: sans-serif;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	/* font-family: 'Times New Roman', Times, serif; */
 	font-weight: bold;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
 }
 
 .slider {
 	position: relative;
 	width: 100%;
-	height: 500px; /* Adjust as needed */
+	height: 100%; /* Adjust as needed */
 	overflow: hidden;
 }
 .slide {
-	position: absolute;
+	display: inline-block;
 	width: 100%;
 	height: 100%;
+	/* background-image: url('bg1.png');
 	background-size: cover;
 	background-position: center;
-	background-color: rgba(255, 0, 0, 0.466);
+	background-color: rgba(255, 0, 0, 0.466); */
 }
-.slide-content {
+.bg-image {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	color: #fff;
+	/* width: 100%;
+	height: 100%; */
+	background-image: url('bg1.png');
+	background-size: cover;
+	background-position: center;
+	z-index: -1;
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+	width: 110%;
+	height: 110%;
+	transform: translate(-5%, -5%);
+}
+/* .bg-image::before {
+	content: '';
+	position: absolute;
+	top: -10px; 
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	background-image: inherit;
+	background-size: cover;
+	background-position: center;
+	filter: blur(8px);
+	z-index: -1;
+} */
+.slide-content {
+	/* position: absolute; */
+	/* top: 50%;
+	left: 50%; */
+	/* transform: translate(-50%, -50%); */
 	text-align: center;
+}
+.title {
+	color: rgb(0, 0, 0);
 }
 
 /* Watch Trailer Button Styles */
 .button {
+	position: relative;
 	display: inline-block;
 	text-align: center;
 	text-decoration: none;
@@ -38,7 +73,7 @@ body {
 	cursor: pointer;
 	border-radius: 2px;
 	font-size: 20px;
-	/* box-shadow: 0 0 20px 3px rgb(255, 255, 255); */
+	/* box-shadow: 0 0 20px 3px rgb(	255, 255, 255); */
 	background-color: #fff;
 	color: #000000;
 }
@@ -58,6 +93,25 @@ body {
 	box-shadow: 0 0 20px 3px rgb(255, 255, 255);
 }
 
+/* btn effect */
+.btn-effect {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transition: all 0.4s;
+	background-color: rgba(255, 255, 255, 0.384);
+}
+
+.btn:hover .btn-effect {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
 .btn:active {
 	transform: translateY(-1px);
 	box-shadow: 0 0 20px 3px rgb(255, 255, 255);
@@ -68,8 +122,9 @@ body {
 	color: #777;
 } */
 
+/* also btn effect */
 .btn::after {
-	content: '';
+	content: ' ';
 	display: inline-block;
 	height: 100%;
 	width: 100%;
@@ -80,14 +135,13 @@ body {
 	z-index: -1;
 	transition: all 0.4s;
 }
-
-.btn-white::after {
-	background-color: rgba(255, 255, 255, 0.384);
-}
-
 .btn:hover::after {
 	transform: scaleX(1.4) scaleY(1.6);
 	opacity: 0;
+}
+
+.btn-white::after {
+	background-color: rgba(255, 255, 255, 0.384);
 }
 
 .btn-animated {
